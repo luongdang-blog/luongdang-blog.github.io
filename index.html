@@ -85,9 +85,10 @@
   </header>
 
   <div class="tools">
-    <input id="q" class="search" type="search" placeholder="Tìm tên bài, nhạc sĩ, ca sĩ… (gõ không dấu cũng được)">
+    <input id="q" class="search" type="search" placeholder="🔍 Tìm tên bài hoặc nhạc sĩ… (có dấu hay không dấu đều được)">
   </div>
 
+  <p id="found" style="margin:12px 4px 0;color:var(--muted);font-size:15px"></p>
   <div id="grid" class="grid"></div>
   <p id="empty" class="empty">Không tìm thấy bài nào phù hợp.</p>
 
@@ -127,8 +128,24 @@ function disc(c){
     <circle cx="33" cy="33" r="15" fill="${c}"/><circle cx="33" cy="33" r="2.4" fill="#f7f0e4"/></svg>`;
 }
 function render(){
-  const q = strip(document.getElementById('q').value.trim());
-  const list = SONGS.filter(s => (active==='all'||s.ch===active) && (!q || strip(s.title+' '+s.sub+' '+s.ch).includes(q)));
+  const raw = document.getElementById('q').value;
+  const toks = strip(raw).split(/[^a-z0-9]+/).filter(Boolean);
+  let list = SONGS;
+  if (toks.length){
+    const scored = [];
+    SONGS.forEach(s=>{
+      const tw = strip(s.title).split(/[^a-z0-9]+/).filter(Boolean);
+      const aw = tw.concat(strip(s.sub).split(/[^a-z0-9]+/).filter(Boolean));
+      const has = (words,t)=>words.some(w=>w.startsWith(t));
+      if (!toks.every(t=>has(aw,t))) return;
+      const inTitle = toks.every(t=>has(tw,t));
+      const phrase = strip(s.title).includes(toks.join(' '));
+      scored.push([phrase?0:(inTitle?1:2), s]);
+    });
+    scored.sort((a,b)=>a[0]-b[0]);
+    list = scored.map(x=>x[1]);
+  }
+  document.getElementById('found').textContent = toks.length ? `Tìm thấy ${list.length} bài` : '';
   document.getElementById('grid').innerHTML = list.map(s=>`
     <a class="card ${s.special?'special':''}" href="${esc(s.url)}" target="_blank" rel="noopener">
       <div class="disc">${disc(color[s.ch]||"#b98a4b")}<div class="num">${s.special?'★':s.n}</div></div>
@@ -141,7 +158,7 @@ function render(){
     </a>`).join('');
   document.getElementById('empty').style.display = list.length?'none':'block';
 }
-document.getElementById('q').addEventListener('input', render);
+['input','keyup','change','compositionend','search'].forEach(ev=>document.getElementById('q').addEventListener(ev, render));
 render();
 </script>
 </body>
