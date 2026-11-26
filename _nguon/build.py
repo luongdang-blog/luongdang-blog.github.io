@@ -54,5 +54,5 @@ updated = sys.argv[1] if len(sys.argv) > 1 else datetime.now().strftime('%d/%m/%
 html = open(P('template.html'), encoding='utf-8').read()
 html = html.replace('__COUNT__', str(len(songs))).replace('__VER__', datetime.now().strftime('%Y%m%d%H%M'))
 html = html.replace('__DATA__', json.dumps(songs, ensure_ascii=False).replace('</', '<\\/')).replace('__UPDATED__', updated)
-open(sys.argv[2] if len(sys.argv) > 2 else P('index.html'), 'w', encoding='utf-8').write(html)
+open(sys.argv[2] if len(sys.argv) > 2 else os.path.join(HERE, '..', 'nhac', 'index.html'), 'w', encoding='utf-8').write(html)
 print(n, 'songs,', len(songs), 'cards')

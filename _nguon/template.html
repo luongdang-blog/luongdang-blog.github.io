@@ -8,7 +8,7 @@
 <meta http-equiv="Expires" content="0">
 <meta name="description" content="Bộ sưu tập nhạc Việt – những bản phối âm hay nhất. Chạm vào bài để nghe trên YouTube.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://luongdang-blog.github.io/">
+<meta property="og:url" content="https://luongdang-blog.github.io/nhac/">
 <meta property="og:title" content="LUONG DANG'S MUSIC COLLECTION – Nhạc Việt, bản phối âm hay nhất">
 <meta property="og:description" content="__COUNT__ bài nhạc Việt phối khí, phối âm hay lạ. Chạm vào để nghe trên YouTube.">
 <meta property="og:image" content="https://luongdang-blog.github.io/og.jpg?v=__VER__">
@@ -75,10 +75,26 @@
   footer{margin-top:40px;text-align:center;color:var(--muted);font-size:13.5px}
   footer .orn{font-family:"Playfair Display",serif;font-size:22px;color:var(--gold);letter-spacing:.4em}
   @media (max-width:520px){header{padding:30px 22px}.grid{grid-template-columns:1fr}}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:12px 20px;flex-wrap:wrap;padding:18px 0 0}
+  .brand{font:700 21px/1.1 "Playfair Display",Georgia,serif;text-decoration:none;color:var(--ink);display:flex;align-items:center;gap:10px}
+  .brand b{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--wine);color:#f3cf7a;font-size:16px}
+  .nav ul{display:flex;gap:4px;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+  .nav li a{display:block;padding:9px 14px;border-radius:999px;text-decoration:none;font-size:15.5px;font-weight:500;color:var(--muted)}
+  .nav li a:hover{background:var(--paper2);color:var(--ink)}
+  .nav li a[aria-current]{background:var(--ink);color:var(--paper)}
+  @media (max-width:600px){.nav ul{width:100%}.nav li{flex:1}.nav li a{text-align:center;padding:9px 8px}}
 </style>
 </head>
 <body>
 <div class="wrap">
+  <nav class="nav">
+    <a class="brand" href="../index.html"><b>L</b>Luong Dang</a>
+    <ul>
+      <li><a href="index.html" aria-current="page">Nhạc</a></li>
+      <li><a href="../sach/index.html">Sách</a></li>
+      <li><a href="../tieng-anh/index.html">Tiếng Anh</a></li>
+    </ul>
+  </nav>
   <header>
     <svg class="waves" viewBox="0 0 520 220" fill="none" stroke="#fff" stroke-width="2">
       <path d="M0 160 C60 120 100 200 160 160 S260 120 320 160 S420 200 520 150"/>

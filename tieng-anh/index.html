@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Học nghe và đàm thoại tiếng Anh theo tình huống đời thường, có lời thoại, dịch nghĩa và luyện nói.">
+<meta property="og:title" content="Tiếng Anh – Nghe và đàm thoại | Luong Dang">
+<meta property="og:url" content="https://luongdang-blog.github.io/tieng-anh/">
+<title>Tiếng Anh – Luong Dang</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Be+Vietnam+Pro:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+:root{--accent:var(--teal)}
+.tracks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.track{padding:22px 22px 20px;background:var(--card);border:1px solid var(--line);border-radius:20px}
+.track svg{width:44px;height:44px;margin-bottom:10px}
+.track h3{font:700 21px/1.2 "Playfair Display",serif;margin:0 0 6px}
+.track p{margin:0;color:var(--muted);font-size:15.5px}
+.lesson{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:0;background:var(--card);border:1px solid var(--line);border-radius:22px;overflow:hidden}
+.lesson .main{padding:24px 26px}
+.lesson .side{background:color-mix(in srgb,var(--teal) 9%,var(--card));padding:24px 22px;border-left:1px solid var(--line)}
+.lesson h3{font:700 25px/1.2 "Playfair Display",serif;margin:6px 0 4px}
+.lesson .sub{color:var(--muted);margin:0 0 16px;font-size:15px}
+.bar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.bar button{min-height:42px;padding:8px 16px;border-radius:999px;border:1.5px solid var(--teal);background:transparent;color:var(--teal);font:inherit;font-size:15px;font-weight:600;cursor:pointer}
+.bar button.on,.bar button:hover{background:var(--teal);color:#fbf3e8}
+.line{display:grid;grid-template-columns:34px minmax(0,1fr) 44px;gap:10px;align-items:start;padding:12px 0;border-top:1px solid var(--line)}
+.who{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-weight:600;font-size:14px;color:#fbf3e8}
+.who.A{background:var(--teal)}.who.B{background:var(--gold)}
+.en{font-size:17.5px;font-weight:500;margin:4px 0 2px}
+.vi{color:var(--muted);font-size:15px;margin:0}
+.hide-vi .vi{display:none}
+.say{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--paper);cursor:pointer;display:grid;place-items:center;color:var(--teal)}
+.say:hover{background:var(--teal);color:#fbf3e8}
+.say.now{background:var(--teal);color:#fbf3e8}
+.side h4{font:700 18px/1.2 "Playfair Display",serif;margin:0 0 10px}
+.side dl{margin:0 0 18px}
+.side dt{font-weight:600;font-size:15.5px}
+.side dd{margin:0 0 10px;color:var(--muted);font-size:14.5px}
+.side ol{margin:0;padding-left:20px;font-size:15px}
+.side li{margin-bottom:6px}
+.note{font-size:13.5px;color:var(--muted);margin:10px 0 0}
+.list{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,250px),1fr));gap:12px}
+.item{display:flex;gap:14px;align-items:center;padding:14px 16px;background:var(--card);border:1px solid var(--line);border-radius:16px}
+.item b{font:700 20px/1 "Playfair Display",serif;color:var(--teal);min-width:28px}
+.item span{display:block;font-weight:500}
+.item small{color:var(--muted);font-size:13.5px}
+@media(max-width:860px){.tracks{grid-template-columns:minmax(0,1fr)}.track{display:grid;grid-template-columns:44px minmax(0,1fr);gap:4px 16px}.track svg{grid-row:span 2;margin:0}.lesson{grid-template-columns:minmax(0,1fr)}.lesson .side{border-left:0;border-top:1px solid var(--line)}}
+@media(max-width:520px){.lesson .main{padding:20px 16px}.en{font-size:16.5px}}
+.weeks{display:grid;gap:20px}
+.week{display:grid;grid-template-columns:150px minmax(0,1fr);background:var(--card);border:1px solid var(--line);border-radius:22px;overflow:hidden;text-decoration:none;color:inherit;transition:transform .2s,box-shadow .2s}
+.week:hover{transform:translateY(-3px);box-shadow:0 16px 30px -18px rgba(30,70,66,.5)}
+.wk{background:var(--teal);color:#fbf3e8;padding:22px 18px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:2px}
+.wk small{font-size:14px;opacity:.85}
+.wk b{font:700 56px/1 "Playfair Display",serif;color:var(--goldlt)}
+.wk span{font-size:13.5px;opacity:.85;white-space:nowrap}
+.ls{padding:20px 24px}
+.ls .cnt{margin:0 0 10px;color:var(--muted);font-size:14.5px}
+.ls ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 24px}
+.ls li{display:flex;gap:12px;align-items:baseline;padding:8px 0;border-top:1px solid var(--line)}
+.ls li>b{font:700 18px/1 "Playfair Display",serif;color:var(--teal);min-width:22px}
+.ls li span{display:block;font-weight:500;font-size:16px}
+.ls li small{color:var(--muted);font-size:13.5px}
+.ls .open{margin:12px 0 0;font-weight:600;color:var(--teal)}
+@media(max-width:760px){.ls ol{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:520px){.week{grid-template-columns:minmax(0,1fr)}.wk{flex-direction:row;gap:10px;padding:14px 18px;justify-content:flex-start}.wk b{font-size:34px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav class="nav">
+    <a class="brand" href="../index.html"><b>L</b>Luong Dang</a>
+    <ul>
+      <li><a href="../nhac/index.html">Nhạc</a></li>
+      <li><a href="../sach/index.html">Sách</a></li>
+      <li><a href="index.html" aria-current="page">Tiếng Anh</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <svg class="art" viewBox="0 0 300 220" aria-hidden="true" fill="#fff">
+      <path d="M30 20h150a20 20 0 0 1 20 20v60a20 20 0 0 1-20 20H90l-34 28v-28H30a20 20 0 0 1-20-20V40a20 20 0 0 1 20-20z"/>
+      <path d="M150 110h110a20 20 0 0 1 20 20v44a20 20 0 0 1-20 20h-14v26l-30-26h-66a20 20 0 0 1-20-20v-44a20 20 0 0 1 20-20z" opacity=".7"/>
+    </svg>
+    <h1>Tiếng Anh: nghe nhiều, nói từng câu</h1>
+    <p>Mỗi ngày một bài hội thoại theo tình huống đời thường: nghe giọng đọc, xem nghĩa tiếng Việt, học ngữ pháp, rồi tự nói lại từng câu cho đến khi trôi chảy.</p>
+  </header>
+
+  <section class="tracks">
+    <div class="track">
+      <svg viewBox="0 0 44 44" aria-hidden="true"><path d="M8 26v-4a14 14 0 0 1 28 0v4" fill="none" stroke="#2f6f6a" stroke-width="4" stroke-linecap="round"/><rect x="5" y="24" width="9" height="14" rx="4" fill="#b98a4b"/><rect x="30" y="24" width="9" height="14" rx="4" fill="#b98a4b"/></svg>
+      <h3>Nghe</h3>
+      <p>Đoạn hội thoại ngắn, tốc độ tự nhiên, nghe lại từng câu.</p>
+    </div>
+    <div class="track">
+      <svg viewBox="0 0 44 44" aria-hidden="true"><path d="M6 8h26a6 6 0 0 1 6 6v12a6 6 0 0 1-6 6H18l-8 7v-7H6a6 6 0 0 1-6-6V14a6 6 0 0 1 6-6z" fill="#2f6f6a" transform="translate(3 0)"/><circle cx="15" cy="20" r="2.5" fill="#fffaf3"/><circle cx="23" cy="20" r="2.5" fill="#fffaf3"/><circle cx="31" cy="20" r="2.5" fill="#fffaf3"/></svg>
+      <h3>Đàm thoại</h3>
+      <p>Đóng vai A hoặc B, che bản dịch, tự nói rồi nghe lại để so.</p>
+    </div>
+    <div class="track">
+      <svg viewBox="0 0 44 44" aria-hidden="true"><rect x="6" y="6" width="32" height="34" rx="4" fill="#b98a4b"/><rect x="11" y="13" width="22" height="3" rx="1.5" fill="#fffaf3"/><rect x="11" y="20" width="16" height="3" rx="1.5" fill="#fffaf3"/><rect x="11" y="27" width="20" height="3" rx="1.5" fill="#fffaf3"/></svg>
+      <h3>Mẫu câu</h3>
+      <p>Những câu dùng được ngay, kèm cách nói lịch sự và cách nói thân mật.</p>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2>Các tuần học</h2>
+    <p class="lead">Mỗi tuần là một trang, gồm nhiều bài hội thoại trình độ B1, có giọng đọc, dịch nghĩa và ngữ pháp. Bấm vào tuần để mở.</p>
+    <div id="weeks" class="weeks"></div>
+  </section>
+
+  <footer class="foot">
+    <span>© 2026 Luong Dang</span>
+    <span class="orn">✦ ✦ ✦</span>
+  </footer>
+</div>
+
+<script>
+{
+/* Thêm tuần mới: đặt file vào thư mục tieng-anh (vd tuan-03.html) rồi thêm một khối {…} dưới đây. */
+const WEEKS = [
+  {no:1, file:'tuan-01.html', dates:'17–20/11/2026', lessons:[
+    [1,'Dinner at a Mexican Restaurant','Ẩm thực Mexico'],
+    [2,'Decorating the Christmas Tree','Giáng sinh'],
+    [3,'My First Yoga Class','Yoga & hơi thở'],
+    [4,'A Bad Day and a Stoic Friend','Triết học Khắc kỷ'],
+    [5,'Setting Up a New Kitchen','Vật dụng nhà bếp'],
+    [6,'Vegetables at Tân Định Market','Rau củ quả Việt Nam']]},
+  {no:2, file:'tuan-02.html', dates:'20/11/2026 –', lessons:[
+    [7,'The Big Five Personality Test','Tâm lý: 5 tính cách lớn'],
+    [8,'A Visit to the Eye Doctor','Khám mắt']]}
+];
+const esc = s => String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+document.getElementById('weeks').innerHTML = WEEKS.map(w=>`
+  <a class="week" href="${esc(w.file)}">
+    <div class="wk"><small>Tuần</small><b>${String(w.no).padStart(2,'0')}</b><span>${esc(w.dates)}</span></div>
+    <div class="ls">
+      <p class="cnt">${w.lessons.length} bài · trình độ B1</p>
+      <ol>${w.lessons.map(l=>`<li><b>${l[0]}</b><div><span>${esc(l[1])}</span><small>${esc(l[2])}</small></div></li>`).join('')}</ol>
+      <p class="open">Mở tuần ${w.no} →</p>
+    </div>
+  </a>`).join('');
+}
+</script>
+</body>
+</html>

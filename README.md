@@ -1,11 +1,23 @@
-# LUONG DANG'S MUSIC COLLECTION
+# LUONG DANG – NHẠC, SÁCH, TIẾNG ANH
 
-Trang nhạc: **https://luongdang-blog.github.io**
+Trang chủ: **https://luongdang-blog.github.io**
+
+| Mục | Thư mục | Địa chỉ |
+|---|---|---|
+| Trang cổng | `index.html` | / |
+| Nhạc | `nhac/` | /nhac/ |
+| Sách tóm tắt – phân tích | `sach/` | /sach/ |
+| Học nghe và đàm thoại tiếng Anh | `tieng-anh/` | /tieng-anh/ |
+
+Kiểu chữ, màu, thanh menu dùng chung: `assets/site.css`.
+Thêm sách: đặt file bài phân tích vào `sach/` (tên không dấu, nối bằng gạch ngang), rồi thêm một dòng vào mảng `BOOKS` trong `sach/index.html`, điền `url`.
+
+## Mục Nhạc
 
 Nguồn bài hát: trang Notion **"NHẠC VIỆT - PHỐI KHÍ - PHỐI ÂM HAY LẠ"** (id `41c09509-f1c5-8034-8c96-e8bb4bc72b8e`).
 
 ## Cấu trúc
-- `index.html` — trang web (được dựng tự động, không sửa tay).
+- `nhac/index.html` — trang nhạc (được dựng tự động, không sửa tay).
 - `og.jpg` — hình xem trước khi gửi link qua Zalo/Facebook.
 - `_nguon/data.tsv` — danh sách bài: `VIDEO_ID <tab> Tên bài | dòng phụ <tab> Tên kênh` (thứ tự theo Notion).
 - `_nguon/template.html` — giao diện.
@@ -21,5 +33,5 @@ Nguồn bài hát: trang Notion **"NHẠC VIỆT - PHỐI KHÍ - PHỐI ÂM HAY 
 
 ## Cách cập nhật
 1. Đọc trang Notion, so với `_nguon/data.tsv`; thêm dòng cho bài mới (tên lấy từ YouTube oEmbed), bỏ bài đã xóa.
-2. Chạy: `python3 _nguon/build.py dd/mm index.html`
+2. Chạy: `python3 _nguon/build.py dd/mm nhac/index.html`
 3. Commit và push lên nhánh `main`. Trang tự cập nhật sau 1–2 phút.

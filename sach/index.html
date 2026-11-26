@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Tóm tắt và phân tích sách bằng tiếng Việt: tác giả nói gì, gốc tư tưởng, phản biện và cách áp dụng.">
+<meta property="og:title" content="Sách – Tóm tắt và phân tích | Luong Dang">
+<meta property="og:url" content="https://luongdang-blog.github.io/sach/">
+<title>Sách – Luong Dang</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Be+Vietnam+Pro:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+:root{--accent:var(--slate)}
+.tools{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:22px}
+.tools input{flex:1 1 260px;min-height:46px;padding:11px 18px;border-radius:14px;border:1px solid var(--line);background:var(--card);font:inherit;font-size:16px;color:var(--ink)}
+.chip{min-height:40px;padding:7px 16px;border-radius:999px;border:1px solid var(--line);background:var(--card);font:inherit;font-size:15px;color:var(--ink);cursor:pointer}
+.chip.on{background:var(--slate);border-color:var(--slate);color:#fbf3e8}
+.shelf{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,480px),1fr));gap:22px}
+.book{display:grid;grid-template-columns:132px minmax(0,1fr);gap:22px;padding:22px;background:var(--card);border:1px solid var(--line);border-radius:22px;text-decoration:none;color:inherit;transition:transform .2s,box-shadow .2s}
+a.book:hover{transform:translateY(-3px);box-shadow:0 16px 30px -18px rgba(40,50,70,.5)}
+.cover{aspect-ratio:2/3;border-radius:4px 10px 10px 4px;position:relative;overflow:hidden;color:#fbf3e8;padding:14px 12px 12px 20px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:6px 8px 0 -2px rgba(0,0,0,.08),inset 6px 0 0 rgba(0,0,0,.18)}
+.cover b{font:700 16px/1.18 "Playfair Display",serif;text-wrap:balance}
+.cover small{font-size:11.5px;opacity:.85;line-height:1.3}
+.cover i{position:absolute;right:-18px;top:44%;width:70px;height:70px;border-radius:50%;border:2px solid rgba(255,255,255,.25)}
+.info h3{font:700 23px/1.2 "Playfair Display",serif;margin:2px 0 4px}
+.info .by{color:var(--muted);font-size:15px;margin:0 0 10px}
+.info p{margin:0 0 12px;font-size:15.5px}
+.info .tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.info .meta{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;font-size:14.5px}
+.status{font-weight:600;color:var(--slate)}
+.status.wait{color:var(--gold)}
+.how{margin-top:48px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.how div{padding:18px 18px 16px;border-top:3px solid var(--slate);background:var(--card);border-radius:0 0 16px 16px}
+.how b{display:block;font:700 18px/1.2 "Playfair Display",serif;margin-bottom:4px}
+.how span{font-size:14.5px;color:var(--muted)}
+.empty{display:none;color:var(--muted);text-align:center;padding:30px 0}
+@media(max-width:860px){.how{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.book{grid-template-columns:96px minmax(0,1fr);gap:16px;padding:16px}.cover b{font-size:13px}.cover small{display:none}.info h3{font-size:20px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav class="nav">
+    <a class="brand" href="../index.html"><b>L</b>Luong Dang</a>
+    <ul>
+      <li><a href="../nhac/index.html">Nhạc</a></li>
+      <li><a href="index.html" aria-current="page">Sách</a></li>
+      <li><a href="../tieng-anh/index.html">Tiếng Anh</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <svg class="art" viewBox="0 0 300 220" aria-hidden="true" fill="#fff">
+      <rect x="20" y="40" width="34" height="170" rx="4"/><rect x="60" y="20" width="28" height="190" rx="4"/><rect x="94" y="56" width="40" height="154" rx="4"/>
+      <rect x="140" y="30" width="26" height="180" rx="4"/><rect x="172" y="70" width="36" height="140" rx="4" transform="rotate(12 190 140)"/>
+    </svg>
+    <h1>Sách: đọc chậm, viết lại bằng tiếng Việt</h1>
+    <p>Mỗi cuốn được đọc trọn, tóm tắt ý tác giả, đối chiếu với tri thức hiện đại và đời sống Việt Nam, kèm góc phản biện và bài thực hành.</p>
+    <div class="facts">
+      <div><b id="nBook">0</b><span>cuốn trên kệ</span></div>
+      <div><b id="nDone">0</b><span>đã đăng</span></div>
+    </div>
+  </header>
+
+  <div class="tools">
+    <input id="q" type="search" placeholder="Tìm tên sách hoặc tác giả…" aria-label="Tìm sách">
+    <div id="chips" style="display:flex;gap:8px;flex-wrap:wrap"></div>
+  </div>
+
+  <div id="shelf" class="shelf"></div>
+  <p id="empty" class="empty">Không có cuốn nào khớp.</p>
+
+  <section class="sec">
+    <h2>Mỗi bài phân tích gồm gì</h2>
+    <div class="how">
+      <div><b>Tác giả nói gì</b><span>Ý chính của sách, giữ đúng lời tác giả.</span></div>
+      <div><b>Gốc và đối chiếu</b><span>Nguồn tư tưởng, nghiên cứu hiện đại liên quan.</span></div>
+      <div><b>Phản biện</b><span>Chỗ cần đọc thận trọng, giới hạn của lập luận.</span></div>
+      <div><b>Thực hành</b><span>Câu hỏi tự vấn và việc làm được ngay.</span></div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <span>© 2026 Luong Dang · Bài viết là phần tóm tắt và diễn giải riêng, không thay thế sách gốc.</span>
+    <span class="orn">✦ ✦ ✦</span>
+  </footer>
+</div>
+
+<script>
+{
+/* Thêm sách mới: chép một dòng {…} bên dưới, sửa nội dung. url để trống = chưa đăng. */
+const BOOKS = [
+  {title:'Introducing Ken Wilber', orig:'Concepts for an Evolving World', author:'Lew Howard', year:'2005', topic:'Triết học & tâm thức',
+   color:'#6b5a7f', summary:'Nhập môn tư tưởng "tích hợp" của Ken Wilber, chia thành từng khái niệm dễ hiểu: bức tranh lớn, bốn góc phần tư, holon.',
+   tags:['Ken Wilber','Tích hợp','Tâm thức'], url:''},
+  {title:'The Art of Systems Thinking', orig:'Nghệ thuật tư duy hệ thống', author:"Joseph O'Connor & Ian McDermott", year:'1997', topic:'Tư duy & quản trị',
+   color:'#2f6f6a', summary:'Nhìn sự việc như một hệ thống: vòng phản hồi, độ trễ, đòn bẩy. Công cụ để hiểu vì sao giải pháp nhanh thường làm vấn đề quay lại.',
+   tags:['Tư duy hệ thống','Ra quyết định','Kinh doanh'], url:''},
+  {title:'First Principles', orig:'Những nguyên lý đầu tiên', author:'Herbert Spencer', year:'1862', topic:'Triết học & tâm thức',
+   color:'#3f5674', summary:'Tác phẩm mở đầu hệ thống "triết học tổng hợp" của Spencer: cái Không thể biết, cái Có thể biết, và quy luật tiến hóa áp dụng cho mọi lĩnh vực.',
+   tags:['Tiến hóa','Triết học','Thế kỷ 19'], url:''},
+  {title:'Nhân sinh chỉ có một việc', orig:'人生只有一件事', author:'Kim Duy Thuần', year:'2021', topic:'Sống & tu dưỡng',
+   color:'#7a3b47', summary:'Nhật ký mười năm "học sống" của nhà sáng lập Business Weekly Đài Loan. Mười bốn bài theo bốn chặng: Thấy, Chuyển, Bớt, Về.',
+   tags:['Học sống','Lãnh đạo','Nhận lỗi'], url:''}
+];
+const esc = s => String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const strip = s => String(s||'').normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/đ/gi,'d').toLowerCase();
+const topics = ['Tất cả', ...new Set(BOOKS.map(b=>b.topic))];
+let active = 'Tất cả';
+document.getElementById('nBook').textContent = BOOKS.length;
+document.getElementById('nDone').textContent = BOOKS.filter(b=>b.url).length;
+
+function chips(){
+  const el = document.getElementById('chips');
+  el.innerHTML = topics.map(t=>`<button class="chip ${t===active?'on':''}" data-t="${esc(t)}">${esc(t)}</button>`).join('');
+  el.querySelectorAll('button').forEach(b=>b.onclick=()=>{active=b.dataset.t;chips();render();});
+}
+function render(){
+  const q = strip(document.getElementById('q').value).trim();
+  const list = BOOKS.filter(b=>(active==='Tất cả'||b.topic===active) && (!q || strip(b.title+' '+b.orig+' '+b.author+' '+b.tags.join(' ')).includes(q)));
+  document.getElementById('shelf').innerHTML = list.map(b=>{
+    const tag = b.url ? 'a' : 'div';
+    const href = b.url ? ` href="${esc(b.url)}"` : '';
+    return `<${tag} class="book"${href}>
+      <div class="cover" style="background:${esc(b.color)}"><i></i><b>${esc(b.title)}</b><small>${esc(b.author)}</small></div>
+      <div class="info">
+        <span class="tag">${esc(b.topic)}</span>
+        <h3>${esc(b.title)}</h3>
+        <p class="by">${esc(b.orig)} · ${esc(b.author)} · ${esc(b.year)}</p>
+        <p>${esc(b.summary)}</p>
+        <div class="tags">${b.tags.map(t=>`<span class="tag">${esc(t)}</span>`).join('')}</div>
+        <div class="meta">${b.url?'<span class="status">Đọc bài phân tích →</span>':'<span class="status wait">Đang biên soạn</span>'}</div>
+      </div></${tag}>`;
+  }).join('');
+  document.getElementById('empty').style.display = list.length ? 'none' : 'block';
+}
+document.getElementById('q').addEventListener('input', render);
+chips(); render();
+}
+</script>
+</body>
+</html>

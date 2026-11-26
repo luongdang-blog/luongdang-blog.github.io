@@ -3,176 +3,159 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<meta http-equiv="Pragma" content="no-cache">
-<meta http-equiv="Expires" content="0">
-<meta name="description" content="Bộ sưu tập nhạc Việt – những bản phối âm hay nhất. Chạm vào bài để nghe trên YouTube.">
+<meta name="description" content="Góc của Luong Dang: nhạc Việt phối khí hay, tóm tắt và phân tích sách, học nghe và đàm thoại tiếng Anh.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://luongdang-blog.github.io/">
-<meta property="og:title" content="LUONG DANG'S MUSIC COLLECTION – Nhạc Việt, bản phối âm hay nhất">
-<meta property="og:description" content="102 bài nhạc Việt phối khí, phối âm hay lạ. Chạm vào để nghe trên YouTube.">
-<meta property="og:image" content="https://luongdang-blog.github.io/og.jpg?v=202611220230">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
+<meta property="og:title" content="Luong Dang – Nhạc, Sách và Tiếng Anh">
+<meta property="og:description" content="Nhạc Việt phối khí hay, tóm tắt và phân tích sách, học nghe và đàm thoại tiếng Anh.">
+<meta property="og:image" content="https://luongdang-blog.github.io/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%B5%3C/text%3E%3C/svg%3E">
-<title>Luong Dang's Music Collection – Nhạc Việt, bản phối âm hay nhất</title>
+<title>Luong Dang – Nhạc, Sách, Tiếng Anh</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Be+Vietnam+Pro:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
 <style>
-  :root{
-    --paper:#f7f0e4; --paper2:#efe4d2; --ink:#3b2a26; --muted:#7a675e;
-    --wine:#7a3b47; --rose:#c98d83; --gold:#b98a4b; --sage:#7f9077; --line:#e2d3bd;
-  }
-  *{box-sizing:border-box}
-  body{margin:0;background:
-      radial-gradient(1200px 600px at 10% -10%, #fbe9d9 0%, transparent 60%),
-      radial-gradient(900px 500px at 110% 10%, #e9efe2 0%, transparent 55%),
-      var(--paper);
-    color:var(--ink);font-family:"Be Vietnam Pro",system-ui,sans-serif;font-size:17px;line-height:1.55}
-  .wrap{max-width:1100px;margin:0 auto;padding:0 20px 60px}
-  header{position:relative;overflow:hidden;margin:20px 0 26px;border-radius:22px;
-    background:linear-gradient(135deg,#6e3441 0%,#8c4b55 45%,#b07a5c 100%);color:#fbf3e8;padding:40px 36px 34px}
-  header svg.waves{position:absolute;right:-40px;bottom:-30px;width:520px;opacity:.22}
-  .eyebrow{font-family:"Times New Roman",Times,serif;font-weight:700;font-size:clamp(24px,3.6vw,34px);letter-spacing:.06em;color:#f3cf7a;text-shadow:0 1px 2px rgba(0,0,0,.25)}
-  h1{font-family:"Playfair Display",Georgia,serif;font-weight:700;font-size:clamp(30px,5vw,46px);line-height:1.15;margin:8px 0 10px}
-  h1 em{font-weight:500;color:#f3d9a9}
-  .lead{max-width:620px;opacity:.92;margin:0}
-  .stats{display:flex;gap:26px;margin-top:22px;flex-wrap:wrap}
-  .stat b{font-family:"Playfair Display",serif;font-size:28px;display:block;line-height:1}
-  .stat span{font-size:13px;opacity:.85}
-
-  .tools{position:sticky;top:0;z-index:5;background:rgba(247,240,228,.93);backdrop-filter:blur(6px);
-    padding:14px 0 12px;margin-bottom:10px;border-bottom:1px solid var(--line)}
-  .search{width:100%;padding:13px 18px;border-radius:14px;border:1px solid var(--line);background:#fffaf3;
-    font:inherit;color:var(--ink);outline:none}
-  .search:focus{border-color:var(--rose);box-shadow:0 0 0 3px rgba(201,141,131,.2)}
-  .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
-  .chip{border:1px solid var(--line);background:#fffaf3;color:var(--ink);border-radius:999px;padding:7px 14px;
-    font:inherit;font-size:14.5px;cursor:pointer;display:inline-flex;align-items:center;gap:7px}
-  .chip i{width:10px;height:10px;border-radius:50%;display:inline-block}
-  .chip small{color:var(--muted)}
-  .chip.on{background:var(--wine);border-color:var(--wine);color:#fbf3e8}
-  .chip.on small{color:#f1d8c9}
-
-  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px;margin-top:18px}
-  .card{display:flex;gap:16px;align-items:center;text-decoration:none;color:inherit;background:#fffaf3;
-    border:1px solid var(--line);border-radius:18px;padding:16px 18px;transition:transform .15s, box-shadow .15s, border-color .15s}
-  .card:hover{transform:translateY(-2px);box-shadow:0 10px 24px -14px rgba(90,45,40,.45);border-color:var(--rose)}
-  .disc{flex:0 0 66px;height:66px;position:relative}
-  .disc svg{width:66px;height:66px;transition:transform 1.2s}
-  .card:hover .disc svg{transform:rotate(200deg)}
-  .disc .num{position:absolute;inset:0;display:grid;place-items:center;font-size:12px;font-weight:600;color:#fffaf3}
-  .body{min-width:0;flex:1}
-  .title{font-family:"Playfair Display",Georgia,serif;font-size:19px;font-weight:700;line-height:1.3;margin:0 0 3px}
-  .sub{font-size:14px;color:var(--muted);margin:0 0 7px;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
-  .meta{display:flex;align-items:center;justify-content:space-between;gap:10px}
-  .ch{font-size:13px;padding:3px 10px;border-radius:999px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:70%}
-  .play{font-size:13.5px;font-weight:600;color:var(--wine);white-space:nowrap}
-  .card.special{background:linear-gradient(135deg,#fff6ea,#f3e6d3);border-style:dashed;border-color:var(--gold)}
-  .empty{text-align:center;color:var(--muted);padding:40px 0;display:none}
-  footer{margin-top:40px;text-align:center;color:var(--muted);font-size:13.5px}
-  footer .orn{font-family:"Playfair Display",serif;font-size:22px;color:var(--gold);letter-spacing:.4em}
-  @media (max-width:520px){header{padding:30px 22px}.grid{grid-template-columns:1fr}}
+.hero.home{--accent:var(--wine);display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:24px;align-items:center}
+.hero.home .art{position:static;width:100%;opacity:1;max-width:380px;justify-self:end}
+.rooms{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.room{display:flex;flex-direction:column;text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--line);border-radius:22px;overflow:hidden;transition:transform .2s,box-shadow .2s,border-color .2s}
+.room:hover{transform:translateY(-3px);box-shadow:0 16px 30px -18px rgba(70,40,30,.5);border-color:var(--c)}
+.room .pic{background:var(--c);aspect-ratio:16/10;display:grid;place-items:center;position:relative}
+.room .pic svg{width:72%;height:auto}
+.room .tag{align-self:flex-start}
+.room .txt{padding:20px 22px 22px;display:flex;flex-direction:column;gap:8px;flex:1}
+.room h2{font-size:26px;margin:0}
+.room p{margin:0;color:var(--muted);font-size:15.5px}
+.room .go{margin-top:auto;padding-top:10px;display:flex;justify-content:space-between;align-items:center;gap:10px;font-weight:600;color:var(--c);font-size:15px}
+.room .go span:last-child{transition:transform .2s}
+.room:hover .go span:last-child{transform:translateX(4px)}
+.r1{--c:var(--wine)}.r2{--c:var(--slate)}.r3{--c:var(--teal)}
+.about{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px;margin-top:40px}
+.about .panel{padding:24px 26px}
+.about h3{font:700 21px/1.2 "Playfair Display",serif;margin:0 0 8px}
+.about p{margin:0;color:var(--muted);font-size:15.5px}
+.about ul{margin:6px 0 0;padding-left:20px;color:var(--muted);font-size:15.5px}
+@media(max-width:900px){.rooms{grid-template-columns:minmax(0,1fr)}.room{flex-direction:row}.room .pic{aspect-ratio:auto;width:38%;flex:none}.room .pic svg{width:80%}}
+@media(max-width:760px){.hero.home{grid-template-columns:minmax(0,1fr)}.hero.home .art{justify-self:center;max-width:300px}.about{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:520px){.room{flex-direction:column}.room .pic{width:auto;aspect-ratio:16/8}.room .pic svg{width:52%}}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <header>
-    <svg class="waves" viewBox="0 0 520 220" fill="none" stroke="#fff" stroke-width="2">
-      <path d="M0 160 C60 120 100 200 160 160 S260 120 320 160 S420 200 520 150"/>
-      <path d="M0 180 C60 140 100 220 160 180 S260 140 320 180 S420 220 520 170"/>
-      <path d="M0 140 C60 100 100 180 160 140 S260 100 320 140 S420 180 520 130"/>
-      <circle cx="420" cy="70" r="46"/><circle cx="420" cy="70" r="30"/><circle cx="420" cy="70" r="8" fill="#fff"/>
-      <path d="M470 10 v80 M470 10 l26 8 v16 l-26 -8"/><circle cx="462" cy="92" r="9" fill="#fff"/>
-    </svg>
-    <div class="eyebrow">LUONG DANG'S MUSIC COLLECTION</div>
-    <h1>NHẠC VIỆT <em>— BẢN PHỐI ÂM HAY NHẤT</em></h1>
-    <p class="lead">Những bản tình ca, nhạc xưa được thổi hồn mới: acoustic, ambient, tango, rock, giao hưởng… Chạm vào một bài để nghe trên YouTube.</p>
-    <div class="stats">
-      <div class="stat"><b id="sCount">0</b><span>bài nhạc</span></div>
-      <div class="stat"><b id="sCh">0</b><span>kênh</span></div>
-      <div class="stat"><b>21/11</b><span>cập nhật theo Notion</span></div>
+  <nav class="nav">
+    <a class="brand" href="index.html"><b>L</b>Luong Dang</a>
+    <ul>
+      <li><a href="nhac/index.html">Nhạc</a></li>
+      <li><a href="sach/index.html">Sách</a></li>
+      <li><a href="tieng-anh/index.html">Tiếng Anh</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero home">
+    <div>
+      <h1>Nhạc hay, sách quý và tiếng Anh mỗi ngày</h1>
+      <p>Góc nhỏ của Luong Dang: những bản phối nhạc Việt đáng nghe lại, những cuốn sách được đọc kỹ và viết lại bằng tiếng Việt, và chặng đường học nghe, nói tiếng Anh.</p>
     </div>
+    <svg class="art" viewBox="0 0 380 300" aria-hidden="true">
+      <defs>
+        <linearGradient id="hg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f3cf7a"/><stop offset="1" stop-color="#c99a52"/></linearGradient>
+      </defs>
+      <ellipse cx="190" cy="276" rx="170" ry="14" fill="#000" opacity=".18"/>
+      <!-- sách xếp chồng -->
+      <rect x="40" y="226" width="200" height="40" rx="5" fill="#3f5674"/><rect x="40" y="226" width="200" height="8" rx="4" fill="#5b7398"/>
+      <rect x="52" y="186" width="180" height="40" rx="5" fill="#f7f0e4"/><rect x="52" y="186" width="14" height="40" fill="#b98a4b"/>
+      <rect x="64" y="148" width="166" height="38" rx="5" fill="#2f6f6a"/><rect x="64" y="148" width="166" height="7" rx="3" fill="#4b8f88"/>
+      <!-- đĩa hát -->
+      <circle cx="268" cy="132" r="100" fill="#2a1f1c"/>
+      <circle cx="268" cy="132" r="86" fill="none" stroke="#45352f" stroke-width="1.5"/>
+      <circle cx="268" cy="132" r="72" fill="none" stroke="#45352f" stroke-width="1.5"/>
+      <circle cx="268" cy="132" r="58" fill="none" stroke="#45352f" stroke-width="1.5"/>
+      <path d="M190 92 A90 90 0 0 1 236 46" stroke="rgba(255,255,255,.22)" stroke-width="6" fill="none" stroke-linecap="round"/>
+      <circle cx="268" cy="132" r="34" fill="url(#hg)"/><circle cx="268" cy="132" r="5" fill="#2a1f1c"/>
+      <!-- nốt nhạc -->
+      <g fill="#f3cf7a"><circle cx="70" cy="96" r="11"/><rect x="79" y="40" width="4" height="58"/><path d="M83 40 q24 8 22 30 q-6 -14 -22 -14z"/></g>
+      <g fill="#fbf3e8" opacity=".85"><circle cx="128" cy="64" r="7"/><rect x="134" y="24" width="3" height="42"/></g>
+    </svg>
   </header>
 
-  <div class="tools">
-    <input id="q" class="search" type="search" placeholder="🔍 Tìm tên bài hoặc nhạc sĩ… (có dấu hay không dấu đều được)">
-  </div>
+  <section class="rooms" aria-label="Ba chuyên mục">
+    <a class="room r1" href="nhac/index.html">
+      <div class="pic">
+        <svg viewBox="0 0 200 130" aria-hidden="true">
+          <ellipse cx="100" cy="122" rx="70" ry="6" fill="#000" opacity=".2"/>
+          <circle cx="100" cy="62" r="56" fill="#2a1f1c"/>
+          <circle cx="100" cy="62" r="46" fill="none" stroke="#45352f"/><circle cx="100" cy="62" r="36" fill="none" stroke="#45352f"/>
+          <path d="M56 40 A50 50 0 0 1 82 14" stroke="rgba(255,255,255,.22)" stroke-width="4" fill="none" stroke-linecap="round"/>
+          <circle cx="100" cy="62" r="19" fill="#c98d83"/><circle cx="100" cy="62" r="3" fill="#f7f0e4"/>
+          <g fill="#f3cf7a"><circle cx="170" cy="40" r="7"/><rect x="175" y="6" width="3" height="36"/></g>
+        </svg>
+      </div>
+      <div class="txt">
+        <span class="tag">Hơn 100 bài · cập nhật theo Notion</span>
+        <h2>Nhạc</h2>
+        <p>Tình ca và nhạc xưa Việt Nam qua những bản phối mới: acoustic, ambient, tango, rock, giao hưởng.</p>
+        <div class="go"><span>Vào nghe</span><span>→</span></div>
+      </div>
+    </a>
 
-  <p id="found" style="margin:12px 4px 0;color:var(--muted);font-size:15px"></p>
-  <div id="grid" class="grid"></div>
-  <p id="empty" class="empty">Không tìm thấy bài nào phù hợp.</p>
+    <a class="room r2" href="sach/index.html">
+      <div class="pic">
+        <svg viewBox="0 0 200 130" aria-hidden="true">
+          <ellipse cx="100" cy="120" rx="80" ry="6" fill="#000" opacity=".2"/>
+          <path d="M100 30 Q60 18 22 26 V112 Q60 104 100 116Z" fill="#fffaf3"/>
+          <path d="M100 30 Q140 18 178 26 V112 Q140 104 100 116Z" fill="#efe4d2"/>
+          <path d="M100 30 V116" stroke="#c9b79c" stroke-width="2"/>
+          <g stroke="#b5a48b" stroke-width="2" stroke-linecap="round"><path d="M36 46 H86"/><path d="M36 58 H86"/><path d="M36 70 H78"/><path d="M36 82 H86"/><path d="M114 46 H164"/><path d="M114 58 H156"/><path d="M114 70 H164"/></g>
+          <path d="M146 26 V62 l8 -7 l8 7 V26z" fill="#b98a4b"/>
+        </svg>
+      </div>
+      <div class="txt">
+        <span class="tag">Tóm tắt · phân tích · chiêm nghiệm</span>
+        <h2>Sách</h2>
+        <p>Đọc kỹ từng cuốn, viết lại bằng tiếng Việt: tác giả nói gì, gốc tư tưởng, phản biện và cách áp dụng.</p>
+        <div class="go"><span>Vào đọc</span><span>→</span></div>
+      </div>
+    </a>
 
-  <footer>
-    <div class="orn">♪ ♫ ♪</div>
-    Nguồn: trang Notion “NHẠC VIỆT - PHỐI KHÍ - PHỐI ÂM HAY LẠ”
+    <a class="room r3" href="tieng-anh/index.html">
+      <div class="pic">
+        <svg viewBox="0 0 200 130" aria-hidden="true">
+          <ellipse cx="80" cy="122" rx="56" ry="6" fill="#000" opacity=".2"/>
+          <path d="M38 82 V66 a42 42 0 0 1 84 0 V82" fill="none" stroke="#1f3f3c" stroke-width="9" stroke-linecap="round"/>
+          <rect x="26" y="74" width="26" height="42" rx="11" fill="#f3cf7a"/><rect x="108" y="74" width="26" height="42" rx="11" fill="#f3cf7a"/>
+          <rect x="32" y="80" width="8" height="30" rx="4" fill="#c99a52"/><rect x="120" y="80" width="8" height="30" rx="4" fill="#c99a52"/>
+          <path d="M138 14 h46 a10 10 0 0 1 10 10 v22 a10 10 0 0 1 -10 10 h-26 l-12 10 v-10 h-8 a10 10 0 0 1 -10 -10 v-22 a10 10 0 0 1 10 -10z" fill="#fffaf3"/>
+          <text x="161" y="41" text-anchor="middle" font-family="Playfair Display,Georgia,serif" font-weight="700" font-size="17" fill="#2f6f6a">Hi!</text>
+        </svg>
+      </div>
+      <div class="txt">
+        <span class="tag">Nghe · nói · mẫu câu</span>
+        <h2>Tiếng Anh</h2>
+        <p>Học nghe và đàm thoại theo tình huống đời thường, có lời thoại, dịch nghĩa và bài luyện nói.</p>
+        <div class="go"><span>Vào học</span><span>→</span></div>
+      </div>
+    </a>
+  </section>
+
+  <section class="about">
+    <div class="panel">
+      <h3>Về trang này</h3>
+      <p>Trang được xây dần từng phần. Nhạc đã có đủ danh sách, Tiếng Anh có bài mới mỗi tuần, Sách sẽ lần lượt đăng từng cuốn.</p>
+    </div>
+    <div class="panel">
+      <h3>Đang có và sắp có</h3>
+      <ul>
+        <li>Tiếng Anh: tuần 1 và tuần 2, 8 bài hội thoại B1</li>
+        <li>Sách đang biên soạn: Introducing Ken Wilber · The Art of Systems Thinking · First Principles · Nhân sinh chỉ có một việc</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <span>© 2026 Luong Dang</span>
+    <span class="orn">♪ ✦ ♪</span>
   </footer>
 </div>
-
-<script id="songs" type="application/json">[{"n": 1, "url": "https://www.youtube.com/watch?v=wkDzhja5OcU", "title": "Ai Nói Với Em – Minh Kỳ & Huy Cường", "sub": "", "ch": ""}, {"n": 2, "url": "https://www.youtube.com/watch?v=rCidC3fofmc", "title": "Anh Đã Quên Mùa Thu 🍂", "sub": "Tùng Giang - Nam Lộc · AI Cover · Ca Nhạc Việt, tuyệt phẩm về mùa thu", "ch": "canhacviet"}, {"n": 3, "url": "https://www.youtube.com/watch?v=czqLt9cswrY", "title": "Anh Không Chết Đâu Em – Trần Thiện Thanh", "sub": "", "ch": ""}, {"n": 4, "url": "https://www.youtube.com/watch?v=M1yhYIdwyZs", "title": "BẢY NGÀY ĐỢI MONG / ST: Trần Thiện Thanh / Ca sĩ A I  cover", "sub": "", "ch": "LLe AI cover"}, {"n": 5, "url": "https://www.youtube.com/watch?v=WB40IS_yUEM", "title": "Bây Giờ Tháng Mấy – Từ Công Phụng", "sub": "Remake Version", "ch": "m o t t h o a n g n h o 🌙"}, {"n": 6, "url": "https://www.youtube.com/watch?v=1Yh65Yc3V88", "title": "Buồn – Y Vân", "sub": "Remake Version", "ch": "m o t t h o a n g n h o 🌙"}, {"n": 7, "url": "https://www.youtube.com/watch?v=qFnLYK0Kqps", "title": "Ca Khúc Cát Bụi Khiến Ai Cũng Phải Lặng Người?  Chị Lan Khào lại say !", "sub": "", "ch": "Ai iu Nhạc Việt"}, {"n": 8, "url": "https://www.youtube.com/watch?v=aFsc6U2xxO8", "title": "Chân Trời Tím - Lan Khào & Anh Điệp", "sub": "Sự kết hợp đầy gượng ép \"Anh với Em không thể đến gần nhau\"", "ch": "Ai iu Nhạc Việt"}, {"n": 9, "url": "https://www.youtube.com/watch?v=ejfe6XGwMoo", "title": "Chiều Hoang", "sub": "Phong Cách Cao Bồi Miền Viễn Tây 🤠 · “Đường Chiều Hoang Vắng Chỉ Mình Tôi…”", "ch": "Ai iu Nhạc Việt"}, {"n": 10, "url": "https://www.youtube.com/watch?v=ejlM2jc8Duo", "title": "Chiều Mưa Biên Giới", "sub": "Rumba Version Nhẹ Nhàng Đầy Cảm Xúc · Giọng Nam Tình Cảm Và Hoài Niệm", "ch": "Ai iu Nhạc Việt"}, {"n": 11, "url": "https://www.youtube.com/watch?v=oDLabWMnjI8", "title": "Chiều Nay Không Có Em (Ngô Thụy Miên)", "sub": "", "ch": "NHẠC TÌNH CA AI"}, {"n": 12, "url": "https://www.youtube.com/watch?v=FRqpQQSW9f0", "title": "Cho Em Quên Tuổi Ngọc – Lam Phương", "sub": "Remake Version", "ch": "m o t t h o a n g n h o 🌙"}, {"n": 13, "url": "https://www.youtube.com/watch?v=eOsBJfVIXos", "title": "CHO LẦN CUỐI (1970) – LÊ UYÊN & PHƯƠNG", "sub": "VietMusic.AIStudio COVER NHẠC XƯA SÀI GÒN TRƯỚC 1975", "ch": "VietMusic.AIStudio"}, {"n": 14, "url": "https://www.youtube.com/watch?v=jIWlu3GfK_A", "title": "Cho Một Người Nằm Xuống", "sub": "Tiếng hát khiến người nghe nghẹn ngào \"bạn bè còn đó anh biết không anh?", "ch": "Ai iu Nhạc Việt"}, {"n": 15, "url": "https://www.youtube.com/watch?v=xKwuDbhSCOg", "title": "Chuyến Tàu Hoàng Hôn - Khoảnh khắc chia ly đầy hoài niệm", "sub": "Chị Lan Khào lại rơi lệ !", "ch": "Ai iu Nhạc Việt"}, {"n": 16, "url": "https://www.youtube.com/watch?v=MbGy2deHY_4&list=PLTbReUVJD_jnd0SMu7EtKfHAC8rkAkThv&index=9", "title": "CÒN CHÚT GÌ ĐỂ NHỚ - Thơ: Vũ Hữu Định, Nhạc: Phạm Duy (Acoustic Cover)", "sub": "", "ch": "Nhac Vang AI"}, {"n": 17, "url": "https://www.youtube.com/watch?v=_XQDjiudlmM", "title": "Còn Tuổi Nào Cho Em – Trịnh Công Sơn", "sub": "Chị Lan Khào lại khiến người nghe rớt nước mắt !", "ch": "Ai iu Nhạc Việt"}, {"n": 18, "url": "https://www.youtube.com/watch?v=yX_bg4QYOjo", "title": "Dấu Chân Địa Đàng – Khi Nhạc Trịnh Bùng Nổ Trong Chất Rock U Ám !", "sub": "", "ch": "Ai iu Nhạc Việt"}, {"n": 19, "url": "https://www.youtube.com/watch?v=d2r3yovYTus", "title": "Diễm Xưa", "sub": "Chị Lan Khào lần đầu hát nhạc Trịnh sẽ như thế nào ?", "ch": "Ai iu Nhạc Việt"}, {"n": 20, "url": "https://www.youtube.com/watch?v=tlaYH0s2lQA", "title": "ĐÊM ĐÔ THỊ (Cover)", "sub": "Y VÂN", "ch": "Ruby Dong Melodies of Soul"}, {"n": 21, "url": "https://www.youtube.com/watch?v=a-eAicY22bk", "title": "Đêm Đông - Lan Khào", "sub": "Tiếng Sax Giữa Đêm Đông Làm Lòng Người Lạnh Đi Thế Nào?", "ch": "Ai iu Nhạc Việt"}, {"n": 22, "url": "https://www.youtube.com/watch?v=kZZKijU-EHM", "title": "Đường về khuya (Lê Dinh & Minh Kỳ) Giọng Ca Nữ", "sub": "", "ch": "NHẠC TÌNH CA AI"}, {"n": 23, "url": "https://www.youtube.com/watch?v=EBIi-0Pkmlo", "title": "Đường Xưa Lối Cũ – Hoàng Thi Thơ", "sub": "Remake Version", "ch": "m o t t h o a n g n h o 🌙"}, {"n": 24, "url": "https://www.youtube.com/watch?v=7V3UbP-CYqk", "title": "EM VỀ MÙA THU / ST: Ngô Thuỵ Miên / Ca sĩ A I  cover", "sub": "", "ch": "LLe AI cover"}, {"n": 25, "url": "https://www.youtube.com/watch?v=hDFvky5jDpQ", "title": "Giã Từ Vũ Khí (Trinh Lam Ngan)", "sub": "", "ch": "NHẠC TÌNH CA AI"}, {"n": 26, "url": "https://www.youtube.com/watch?v=CtJHACv1DcU", "title": "Giọt Lệ Cho Ngàn Sau – Từ Công Phụng", "sub": "Remake Version", "ch": "m o t t h o a n g n h o 🌙"}, {"n": 27, "url": "https://www.youtube.com/watch?v=ObnP5lUFz-Y", "title": "Giọt Lệ Đài Trang – Châu Kỳ", "sub": "", "ch": "Ai iu Nhạc Việt"}, {"n": 28, "url": "https://www.youtube.com/watch?v=IlwRy8GTOQs", "title": "Giọt Mưa Trên Lá – Phạm Duy", "sub": "Remake Version", "ch": "m o t t h o a n g n h o 🌙"}, {"n": 29, "url": "https://www.youtube.com/watch?v=IfHVsY2PISA", "title": "GIỌT NẮNG BÊN THỀM (Hoa vẫn hồng trước sân nhà tôi...)", "sub": "st: THANH TÙNG", "ch": "Ruby Dong Melodies of Soul"}, {"n": 30, "url": "https://www.youtube.com/watch?v=XxfioU7dhjE", "title": "GIỌT NƯỚC MẮT NGÀ", "sub": "AN KHANG · Sáng tác: Ngô Thụy Miên · Nhạc Trữ Tình Bất Hủ", "ch": "Thanh An - Người Hát Rong Tình Ca"}, {"n": 31, "url": "https://www.youtube.com/watch?v=X3RUyhqsa24", "title": "Gọi Tên Bốn Mùa – Trịnh Công Sơn", "sub": "Remake Version", "ch": "m o t t h o a n g n h o 🌙"}, {"n": 32, "url": "https://www.youtube.com/watch?v=x8W3TAlxz9k", "title": "Hạ Trắng - Lan Khào", "sub": "Bạn đã bao giờ nghe bản Trịnh Công Sơn buồn đến thế chưa?", "ch": "Ai iu Nhạc Việt"}, {"n": 33, "url": "https://www.youtube.com/watch?v=mJiRp5gOUsM", "title": "Hai Mùa Mưa", "sub": "Tình Khúc Hoài Niệm Đầy Da Diết 🌧️ · Mùa mưa lần trước anh về đây ghé thăm tôi 💔", "ch": "Ai iu Nhạc Việt"}, {"n": 34, "url": "https://www.youtube.com/watch?v=b7tfzeJQ8vQ", "title": "Hát Cho Người Nằm Xuống - TCS", "sub": "", "ch": "Tide Tran"}, {"n": 35, "url": "https://www.youtube.com/watch?v=IdmJIPFRm_A", "title": "HẸN HÒ – PHẠM DUY", "sub": "AN NHIÊN THỂ HIỆN · Nghe một lần nhớ mãi", "ch": "Thanh An - Người Hát Rong Tình Ca"}, {"n": 36, "url": "https://www.youtube.com/watch?v=rKV1aZ6iHn8", "title": "Hoài Cảm – Cung Tiến", "sub": "Remake Version", "ch": "m o t t h o a n g n h o 🌙"}, {"n": 37, "url": "https://www.youtube.com/watch?v=FZbq5rDkzs8", "title": "HỎI NGƯỜI CÒN NHỚ ĐẾN TA – HOÀNG THI THƠ", "sub": "AI COVER NHẠC XƯA SÀI GÒN TRƯỚC 1975 – VietMusic.AIStudio", "ch": "VietMusic.AIStudio"}, {"n": 38, "url": "https://www.youtube.com/watch?v=5LuyLQQZweE", "title": "Hối Tiếc – Trầm Tử Thiêng - Thật XÓT XA & Đầy TIẾC NUỐI", "sub": "VietMusic.AIStudio COVER NHẠC XƯA SÀI GÒN", "ch": "VietMusic.AIStudio"}, {"n": 39, "url": "https://www.youtube.com/watch?v=rn-JRCSPPDM", "title": "Huyền Sử Ca Một Người Mang Tên Quốc – Phạm Duy", "sub": "", "ch": ""}, {"n": 40, "url": "https://www.youtube.com/watch?v=DwOyjmT8dhE", "title": "Khi Đã Yêu – Phượng Linh", "sub": "Remake Version", "ch": "m o t t h o a n g n h o 🌙"}, {"n": 41, "url": "https://www.youtube.com/watch?v=PlhyFIDhuwc", "title": "Kỷ Vật Cho Em – Thơ Linh Phương – Nhạc Phạm Duy", "sub": "", "ch": ""}, {"n": 42, "url": "https://www.youtube.com/watch?v=j4MZ04Ortqk", "title": "Lời Buồn Thánh – Trịnh Công Sơn", "sub": "Remake Version", "ch": "m o t t h o a n g n h o 🌙"}, {"n": 43, "url": "https://www.youtube.com/watch?v=Sz3yGmjNlYo", "title": "Lời Cuối Cho Em", "sub": "Acoustic Ballad · Nguyễn Vũ · Hoài Niệm Xưa AI", "ch": "Hoài Niệm Xưa AI"}, {"n": 44, "url": "https://www.youtube.com/watch?v=SGhRzHD2Zo4", "title": "“Lời Cuối Cho Em” Final Words for You (English Version)", "sub": "", "ch": "NHẠC TÌNH CA AI"}, {"n": 45, "url": "https://www.youtube.com/watch?v=vObfHHAWaCI", "title": "MÀU KỶ NIỆM – PHẠM ĐÌNH CHƯƠNG", "sub": "Thơ NGUYÊN SA · AI COVER · NHẠC XƯA SÀI GÒN trước 1975", "ch": "VietMusic.AIStudio"}, {"n": 46, "url": "https://www.youtube.com/watch?v=DtHvMeIxbX0", "title": "Mắt Biếc – Ngô Thụy Miên", "sub": "Remake Version", "ch": "m o t t h o a n g n h o 🌙"}, {"n": 47, "url": "https://www.youtube.com/watch?v=xXxHuynQe4U", "title": "Mắt Lệ Cho Người – Từ Công Phụng", "sub": "Remake Version", "ch": "m o t t h o a n g n h o 🌙"}, {"n": 48, "url": "https://www.youtube.com/watch?v=x0obyBOg3wg", "title": "Mộ Khúc – Phạm Duy", "sub": "Một Nỗi Buồn Không Hiểu Vì Sao · Nhạc Xưa Trữ Tình · AI cover", "ch": "canhacviet"}, {"n": 49, "url": "https://www.youtube.com/watch?v=YSoHdo9psbw", "title": "MỘT CHIỀU THU (1951) – NHẬT BẰNG", "sub": "VietMusic.AIStudio COVER NHẠC XƯA SÀI GÒN TRƯỚC 1975", "ch": "VietMusic.AIStudio"}, {"n": 50, "url": "https://www.youtube.com/watch?v=F28gRmZWb9c", "title": "Một Cõi Đi Về – Trịnh Công Sơn", "sub": "Neoclassical Ambient Cover", "ch": "Moon Whisper"}, {"n": 51, "url": "https://www.youtube.com/watch?v=65i-vROEUMc", "title": "Một Mai Em Đi – Trường Sa", "sub": "Remake Version", "ch": "m o t t h o a n g n h o 🌙"}, {"n": 52, "url": "https://www.youtube.com/watch?v=DcY1l3TQ0W8", "title": "Một Mai Giã Từ Vũ Khí", "sub": "Nỗi Đau Nào Đang Ẩn Sau Giọng Hát Của Anh Điệp?", "ch": "Ai iu Nhạc Việt"}, {"n": 53, "url": "https://www.youtube.com/watch?v=8Wn0s6S_dQo", "title": "MỘT MÌNH Acoustic Cover", "sub": "st: THANH TÙNG", "ch": "Ruby Dong Melodies of Soul"}, {"n": 54, "url": "https://www.youtube.com/watch?v=7RRcH_fPHuU", "title": "MÙA THU CHO EM COVER, st: NGÔ THỤY MIÊN", "sub": "", "ch": "Ruby Dong Melodies of Soul"}, {"n": 55, "url": "https://www.youtube.com/watch?v=cBlD69cCxiQ", "title": "Mưa Hồng – Trịnh Công Sơn", "sub": "Remake Version", "ch": "m o t t h o a n g n h o 🌙"}, {"n": 56, "url": "https://www.youtube.com/watch?v=MqtjaZd7Qsg", "title": "Mưa Rừng – Huỳnh Anh", "sub": "Remake Version", "ch": "m o t t h o a n g n h o 🌙"}, {"n": 57, "url": "https://www.youtube.com/watch?v=M61qoQg5DSk", "title": "Nắng Chiều – Lê Trọng Nguyễn", "sub": "Remake Version", "ch": "m o t t h o a n g n h o 🌙"}, {"n": 58, "url": "https://www.youtube.com/watch?v=1oA8YuZauWo", "title": "Nắng Thủy Tinh – Trịnh Công Sơn", "sub": "Remake Version", "ch": "m o t t h o a n g n h o 🌙"}, {"n": 59, "url": "https://www.youtube.com/watch?v=N2M12Zb2e6E", "title": "NẾU VẮNG ANH – ANH BẰNG", "sub": "AI COVER · NHẠC XƯA Sài Gòn trước 1975 – VietMusic.AIStudio", "ch": "VietMusic.AIStudio"}, {"n": 60, "url": "https://www.youtube.com/watch?v=O0f3cWIZUTc", "title": "NẾU XA NHAU (Cover) SONG CA", "sub": "st: ĐỨC HUY", "ch": "Ruby Dong Melodies of Soul"}, {"n": 61, "url": "https://www.youtube.com/watch?v=k0KF53L2WjI", "title": "Ngày Về - Hoàng Giác", "sub": "Thủy Lene Music", "ch": "Thủy Lene Music"}, {"n": 62, "url": "https://www.youtube.com/watch?v=T_Lx5bvZV7M", "title": "NGHẸN NGÀO – Lam Phương", "sub": "nỗi TIẾC NUỐI của MỐI DUYÊN ĐẦU, VietMusic.AIStudio COVER NHẠC XƯA SÀI GÒN", "ch": "VietMusic.AIStudio"}, {"n": 63, "url": "https://www.youtube.com/watch?v=4BvwsbbkV8c", "title": "NGHÌN TRÙNG XA CÁCH", "sub": "PHẠM DUY · SYMPHONIC OPERA COVER (Nghìn trùng xa cách người đã đi rồi...)", "ch": "Ruby Dong Melodies of Soul"}, {"n": 64, "url": "https://www.youtube.com/watch?v=rKsvb0jvMP4", "title": "Người Đi Qua Đời Tôi – Phạm Đình Chương", "sub": "Remake Version", "ch": "m o t t h o a n g n h o 🌙"}, {"n": 65, "url": "https://www.youtube.com/watch?v=TuNQdckwGKQ", "title": "NHẠT NHÒA – TUẤN KHANH", "sub": "AI COVER · VietMusic.AIStudio · Nhạc Vàng Xưa", "ch": "VietMusic.AIStudio"}, {"n": 66, "url": "https://www.youtube.com/watch?v=PUfVavj7Ycw", "title": "Những Bước Chân Âm Thầm – Y Vân", "sub": "Remake Version", "ch": "m o t t h o a n g n h o 🌙"}, {"n": 67, "url": "https://www.youtube.com/watch?v=QCKl7V42ZVc", "title": "Niệm Khúc Cuối – Ngô Thụy Miên", "sub": "Remake Version", "ch": "m o t t h o a n g n h o 🌙"}, {"n": 68, "url": "https://www.youtube.com/watch?v=w-1n0uGfo-o", "title": "NỖI BUỒN GÁC TRỌ (Gác lạnh về khuya cơn gió lùa...)", "sub": "MẠNH PHÁT, HOÀI LINH", "ch": "Ruby Dong Melodies of Soul"}, {"n": 69, "url": "https://www.youtube.com/watch?v=1SpaqFtcaNE", "title": "NỬA ĐÊM NGOÀI PHỐ (Cover)", "sub": "st: TRÚC PHƯƠNG (Buồn vào hồn không tên...)", "ch": "Ruby Dong Melodies of Soul"}, {"n": 70, "url": "https://www.youtube.com/watch?v=qGgB8bVZsTE", "title": "Nước Mắt Mùa Thu – Phạm Duy", "sub": "An Nhiên · Tình Khúc Bất Hủ – Phối Mới 2026", "ch": "Thanh An - Người Hát Rong Tình Ca"}, {"n": 71, "url": "https://www.youtube.com/watch?v=W0pcoFLv4m8", "title": "Nương Chiều – Phạm Duy", "sub": "Khúc Nhạc Quê Hương Giữa Nương Lúa Chiều Vàng", "ch": "canhacviet"}, {"n": 72, "url": "https://www.youtube.com/watch?v=8EY94strKBs", "title": "PHỐ BUỒN – PHẠM DUY", "sub": "TUYỆT PHẨM TANGO · AI COVER NHẠC XƯA SÀI GÒN TRƯỚC 1975 – VietMusic.AIStudio", "ch": "VietMusic.AIStudio"}, {"n": 73, "url": "https://www.youtube.com/watch?v=W4vNAunrMI4", "title": "Phố Đêm – Song Ca Ngọt Ngào Khiến Người Nghe Thổn Thức💔", "sub": "Tình Khúc Bất Hủ Của Tâm Anh", "ch": "Ai iu Nhạc Việt"}, {"n": 74, "url": "https://www.youtube.com/watch?v=spKVdxC_yGM", "title": "RỪNG LÁ THẤP (Rừng lá xanh xanh cây phủ đường đi, thành phố sau lưng... )", "sub": "st: TRẦN THIỆN THANH", "ch": "Ruby Dong Melodies of Soul"}, {"n": 75, "url": "https://www.youtube.com/watch?v=nK1Ai8NsVn8", "title": "“Rừng Lá Thấp” (Trần Thiện Thanh) Phiên bản 2", "sub": "", "ch": "NHẠC TÌNH CA AI"}, {"n": 76, "url": "https://www.youtube.com/watch?v=18g3mSYGjbk", "title": "Rừng Xưa Đã Khép - Trịnh Công Sơn", "sub": "Avant-garde Chamber Version", "ch": "Moon Whisper"}, {"n": 77, "url": "https://www.youtube.com/watch?v=F6D1vylEfwk", "title": "Sang Ngang – Đỗ Lễ", "sub": "Remake Version", "ch": "m o t t h o a n g n h o 🌙"}, {"n": 78, "url": "https://www.youtube.com/watch?v=H8_HGhmWwks", "title": "Sương Trắng Miền Quê Ngoại (Đinh Miên Vũ)", "sub": "", "ch": "NHẠC TÌNH CA AI"}, {"n": 79, "url": "https://www.youtube.com/watch?v=BpuFnm8ElVY", "title": "TẠ TÌNH", "sub": "Sáng tác: HOÀNG THI THƠ · Cover by Ngô Thu Trang AI", "ch": "Ngô Thu Trang"}, {"n": 80, "url": "https://www.youtube.com/watch?v=wpHPxHMJvsk", "title": "Tạ Từ Trong Đêm", "sub": "Tình Khúc Chia Ly Day Dứt Của Trần Thiện Thanh💔 · Nước Mắt Thời Chiến !", "ch": "Ai iu Nhạc Việt"}, {"n": 81, "url": "https://www.youtube.com/watch?v=4kxlsm3xXa4&list=PLTbReUVJD_jnd0SMu7EtKfHAC8rkAkThv&index=6", "title": "THU HÁT CHO NGƯỜI", "sub": "GIỌNG NAM TÌNH TỰ TRẦM ẤM", "ch": "VIET AI MUSIC COVER"}, {"n": 82, "url": "https://www.youtube.com/watch?v=YQDuM1Wamhc", "title": "THU, HÁT CHO NGƯỜI (1968) – VŨ ĐỨC SAO BIỂN", "sub": "VietMusic.AIStudio COVER NHẠC XƯA SÀI GÒN TRƯỚC 1975", "ch": "VietMusic.AIStudio"}, {"n": 83, "url": "https://www.youtube.com/watch?v=1Nz6I4n_2iI", "title": "Thuyền và Biển - Phan Huỳnh Điểu", "sub": "Cinematic Ballad Cover", "ch": "Moon Whisper"}, {"n": 84, "url": "https://www.youtube.com/watch?v=F-Rsz6gU5Y8", "title": "Tìm Nhau – Phạm Duy", "sub": "Remake Version", "ch": "m o t t h o a n g n h o 🌙"}, {"n": 85, "url": "https://www.youtube.com/watch?v=rjCXMmnvfts", "title": "TÌNH CẦM – PHẠM DUY - Thơ HOÀNG CẦM)", "sub": "AI COVER · NHẠC XƯA SÀI GÒN TRƯỚC 1975 – VietMusic.AIStudio", "ch": "VietMusic.AIStudio"}, {"n": 86, "url": "https://www.youtube.com/watch?v=p3O8uaVR8fk", "title": "TÌNH KHÚC CHO EM (Cover) SONG CA", "sub": "st: LÊ UYÊN PHƯƠNG", "ch": "Ruby Dong Melodies of Soul"}, {"n": 87, "url": "https://www.youtube.com/watch?v=RVXHOxDusiM", "title": "Tình Khúc Thứ Nhất – Vũ Thành An", "sub": "Remake Version", "ch": "m o t t h o a n g n h o 🌙"}, {"n": 88, "url": "https://www.youtube.com/watch?v=vm_ClMbNiQM", "title": "Tình Nghệ Sĩ – Đoàn Chuẩn – Từ Linh", "sub": "Remake Version", "ch": "m o t t h o a n g n h o 🌙"}, {"n": 89, "url": "https://www.youtube.com/watch?v=xJ3bSv3nsr0", "title": "Tình Tự Mùa Xuân – Từ Công Phụng", "sub": "Remake Version", "ch": "m o t t h o a n g n h o 🌙"}, {"n": 90, "url": "https://www.youtube.com/watch?v=tKkNaizLsCw", "title": "Tình Yêu Đã Mất – Phạm Mạnh Cương", "sub": "Remake Version", "ch": "m o t t h o a n g n h o 🌙"}, {"n": 91, "url": "https://www.youtube.com/watch?v=e8CyL8_bqLw", "title": "Tuổi Xa Người (Từ Công Phụng)", "sub": "", "ch": "NHẠC TÌNH CA AI"}, {"n": 92, "url": "https://www.youtube.com/watch?v=784BSfcMAEM", "title": "TỪ ĐÓ EM BUỒN", "sub": "st: TRẦN THIỆN THANH", "ch": "Ruby Dong Melodies of Soul"}, {"n": 93, "url": "https://www.youtube.com/watch?v=TNHBF0bVxXE", "title": "Tưởng Niệm – Trầm Tử Thiêng", "sub": "Một Thời Yêu Thiết Tha · VietMusic.AIStudio COVER NHẠC XƯA SÀI GÒN", "ch": "VietMusic.AIStudio"}, {"n": 94, "url": "https://www.youtube.com/watch?v=b_JLmVSupio", "title": "Về Đây Nghe Em (Trần Quang Lộc) Phiên bản 2", "sub": "", "ch": "NHẠC TÌNH CA AI"}, {"n": 95, "url": "https://www.youtube.com/watch?v=IEwRfXlkjWw", "title": "Vết Thương Cuối Cùng – Diên An", "sub": "Remake Version", "ch": "m o t t h o a n g n h o 🌙"}, {"n": 96, "url": "https://www.youtube.com/watch?v=9pL9yw1bcy0", "title": "Xin Mặt Trời Ngủ Yên – Trịnh Công Sơn", "sub": "Remake Version", "ch": "m o t t h o a n g n h o 🌙"}, {"n": 97, "url": "https://www.youtube.com/watch?v=fyJH3nSohsg", "title": "Xóm Đêm (Phạm Đình Chương)", "sub": "", "ch": "NHẠC TÌNH CA AI"}, {"n": 98, "url": "https://www.youtube.com/watch?v=Z3sUmRsPMes", "title": "Bài Không Tên Số 2 – Vũ Thành An", "sub": "Remake Version", "ch": "m o t t h o a n g n h o 🌙"}, {"n": 99, "url": "https://www.youtube.com/watch?v=hllw6KK1sp0", "title": "Bài Không Tên Số 3 – Vũ Thành An", "sub": "Remake Version", "ch": "m o t t h o a n g n h o 🌙"}, {"n": 100, "url": "https://www.youtube.com/watch?v=q5WpDof4V3I", "title": "Bài Không Tên Số 4 – Vũ Thành An", "sub": "Remake Version", "ch": "m o t t h o a n g n h o 🌙"}, {"n": 101, "url": "https://www.youtube.com/watch?v=OF63Chom3Uo", "title": "Bài Không Tên Số 05 – Vũ Thành An", "sub": "Remake Version", "ch": "m o t t h o a n g n h o 🌙"}, {"n": 102, "url": "https://www.youtube.com/watch?v=aqIX1DMNw14", "title": "Bài Không Tên Cuối Cùng – Vũ Thành An", "sub": "Remake Version", "ch": "m o t t h o a n g n h o 🌙"}]</script>
-<script>
-const SONGS = JSON.parse(document.getElementById('songs').textContent);
-const PALETTE = ['#7a3b47','#b98a4b','#7f9077','#c98d83','#5f6f8a','#9a6b8c','#a5714f','#6b8a86','#8c7b52','#b46f6f','#6d5a7f','#88936b','#a08470'];
-const strip = s => (s||'').normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/đ/g,'d').replace(/Đ/g,'D').toLowerCase();
-const esc = s => (s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-
-const counts = {};
-SONGS.forEach(s=>{ if(s.ch) counts[s.ch]=(counts[s.ch]||0)+1; });
-const channels = Object.keys(counts).sort((a,b)=>counts[b]-counts[a]);
-const color = {}; channels.forEach((c,i)=>color[c]=PALETTE[i%PALETTE.length]);
-
-document.getElementById('sCount').textContent = SONGS.filter(s=>!s.special).length;
-document.getElementById('sCh').textContent = channels.length;
-
-let active = 'all';
-function renderChips(){
-  const el = document.getElementById('chips');
-  el.innerHTML = `<button class="chip ${active==='all'?'on':''}" data-c="all">Tất cả <small>${SONGS.length}</small></button>` +
-    channels.map(c=>`<button class="chip ${active===c?'on':''}" data-c="${esc(c)}"><i style="background:${color[c]}"></i>${esc(c)} <small>${counts[c]}</small></button>`).join('');
-  el.querySelectorAll('.chip').forEach(b=>b.onclick=()=>{active=b.dataset.c;renderChips();render();});
-}
-function disc(c){
-  return `<svg viewBox="0 0 66 66"><circle cx="33" cy="33" r="32" fill="#2f2522"/>
-    <circle cx="33" cy="33" r="27" fill="none" stroke="#4a3b36" stroke-width="1"/>
-    <circle cx="33" cy="33" r="22" fill="none" stroke="#4a3b36" stroke-width="1"/>
-    <path d="M12 22 A24 24 0 0 1 30 9" stroke="rgba(255,255,255,.18)" stroke-width="3" fill="none" stroke-linecap="round"/>
-    <circle cx="33" cy="33" r="15" fill="${c}"/><circle cx="33" cy="33" r="2.4" fill="#f7f0e4"/></svg>`;
-}
-function render(){
-  const raw = document.getElementById('q').value;
-  const toks = strip(raw).split(/[^a-z0-9]+/).filter(Boolean);
-  let list = SONGS;
-  if (toks.length){
-    const scored = [];
-    SONGS.forEach(s=>{
-      const tw = strip(s.title).split(/[^a-z0-9]+/).filter(Boolean);
-      const aw = tw.concat(strip(s.sub).split(/[^a-z0-9]+/).filter(Boolean));
-      const has = (words,t)=>words.some(w=>w.startsWith(t));
-      if (!toks.every(t=>has(aw,t))) return;
-      const inTitle = toks.every(t=>has(tw,t));
-      const phrase = strip(s.title).includes(toks.join(' '));
-      scored.push([phrase?0:(inTitle?1:2), s]);
-    });
-    scored.sort((a,b)=>a[0]-b[0]);
-    list = scored.map(x=>x[1]);
-  }
-  document.getElementById('found').textContent = toks.length ? `Tìm thấy ${list.length} bài` : '';
-  document.getElementById('grid').innerHTML = list.map(s=>`
-    <a class="card ${s.special?'special':''}" href="${esc(s.url)}" target="_blank" rel="noopener">
-      <div class="disc">${disc(color[s.ch]||"#b98a4b")}<div class="num">${s.special?'★':s.n}</div></div>
-      <div class="body">
-        <p class="title">${esc(s.title)}</p>
-        ${s.sub?`<p class="sub">${esc(s.sub)}</p>`:''}
-        <div class="meta">${s.ch?`<span class="ch" style="background:${color[s.ch]}22;color:${color[s.ch]}">${esc(s.ch)}</span>`:'<span></span>'}
-        <span class="play">${s.special?'Mở kênh ↗':'▶ Nghe'}</span></div>
-      </div>
-    </a>`).join('');
-  document.getElementById('empty').style.display = list.length?'none':'block';
-}
-['input','keyup','change','compositionend','search'].forEach(ev=>document.getElementById('q').addEventListener(ev, render));
-render();
-</script>
 </body>
 </html>
